@@ -28,8 +28,8 @@ class IntList:
 
         return 1 + self.rest.size()
 
-    def get(self, index: int) -> Self:
-        """Get the value at index of the IntList."""
+    def iterative_get(self, index: int) -> Self:
+        """Iteratively get the value at index of the IntList."""
         if index >= self.size() or index < 0:
             raise IndexError("Out of range")
 
@@ -39,4 +39,10 @@ class IntList:
             count += 1
             pointer = pointer.rest
 
-        return pointer
+        return pointer.first
+
+    def get(self, index: int) -> Self:
+        """Recursively get the value at index of the IntList."""
+        if index == 0:
+            return self.first
+        return self.rest.get(index - 1)
