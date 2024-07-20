@@ -9,7 +9,7 @@ class IntList:
         self.first = first
         self.rest = rest
 
-    def iterativeSize(self) -> int:
+    def iterative_size(self) -> int:
         """Iteratively get the size of the IntList"""
         if self.rest is None:
             return 1
